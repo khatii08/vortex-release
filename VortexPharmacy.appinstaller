@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <AppInstaller xmlns="http://schemas.microsoft.com/appx/appinstaller/2018"
+    Uri="https://raw.githubusercontent.com/khatii08/vortex-release/main/VortexPharmacy.appinstaller" Version="1.0.0.0">
+    <MainPackage Name="com.vortex.pharmacy" Version="1.0.0.0"
+      Publisher="CN=Vortex Software"
+      Uri="https://raw.githubusercontent.com/khatii08/vortex-release/main/versions/pharmacy_desktop_app_1.0.0.0.msix"
+      ProcessorArchitecture="x64" />
+    <UpdateSettings>
+      <OnLaunch HoursBetweenUpdateChecks="0" 
+        UpdateBlocksActivation="true" ShowPrompt="true" />
+        <AutomaticBackgroundTask />
+        </UpdateSettings>
+  </AppInstaller>
