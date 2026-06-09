@@ -1,0 +1,51 @@
+======================================================================
+                  VORTEX PHARMACY SUITE - INSTALLATION GUIDE
+======================================================================
+
+Because the application is signed with a self-signed digital certificate (vortex.cer) to avoid costly licensing fees, Windows requires you to trust the certificate ONCE on the machine before it will allow the installation of the MSIX app package.
+
+You can install the certificate and the application using either of the two methods below:
+
+
+----------------------------------------------------------------------
+METHOD 1: AUTOMATIC INSTALLATION (Easiest & Recommended)
+----------------------------------------------------------------------
+We have provided a helper PowerShell script that handles both the certificate registration and application installation in one go:
+
+1. Right-click the file named "Install.ps1".
+2. Select "Run with PowerShell" from the context menu.
+3. If Windows warns you about the execution policy:
+   - Press "Y" or "Enter" to allow the script to run.
+4. A Windows Security prompt will pop up asking if you want to trust the Root CA certificate:
+   - Click "Yes" to confirm.
+5. The script will automatically import the certificate and install Vortex Pharmacy.
+
+
+----------------------------------------------------------------------
+METHOD 2: MANUAL INSTALLATION
+----------------------------------------------------------------------
+If you prefer to install the certificate manually:
+
+STEP 1: INSTALL THE CERTIFICATE
+1. Double-click the file named "vortex.cer".
+2. Click the "Install Certificate..." button.
+3. In the Certificate Import Wizard:
+   - Select "Current User" and click "Next".
+   - Select "Place all certificates in the following store".
+   - Click "Browse" and choose "Trusted People", then click "OK" and "Next".
+   - Click "Finish". You should see a message saying "The import was successful."
+4. Repeat the process but this time place the certificate in the "Trusted Root Certification Authorities" store:
+   - Double-click "vortex.cer" -> "Install Certificate..." -> "Current User" -> "Next".
+   - Select "Place all certificates in the following store".
+   - Click "Browse" and choose "Trusted Root Certification Authorities" (or "Root"), then click "OK" and "Next".
+   - Click "Finish". 
+   - A Windows security popup will warn you about installing a Root certificate. Click "Yes" to confirm the trust.
+
+STEP 2: INSTALL THE APPLICATION
+1. Once the certificate is trusted, double-click "VortexPharmacy.msix".
+2. Click "Install" (or "Update") on the installer window.
+3. The app is now installed and can be launched from your Start Menu.
+
+======================================================================
+Support: For help, contact +91 62614 10522 or email prin0747@gmail.com
+======================================================================
